@@ -11,5 +11,6 @@ elif query == 'signup':
     sign_up()
 elif query == 'update':
     update()
+    print('Update successfull')
 else:
     print('Invalid Input')
