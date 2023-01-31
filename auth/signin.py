@@ -6,4 +6,5 @@ def login():
 
     if login_verification(username=username, password=password):
         print('Login Successfull')
+        return True
 

@@ -2,7 +2,7 @@ import json
 from datetime import datetime as dt
 from auth import signup
 
-user = {'jDoe': {'password': 'password', 'first_name': 'Jane', 'last_name': 'Doe', 'age': 20, 'address': {'street': 'abcxyz', 'city': 'Abujs', 'state': 'FCT', 'country': 'Nigeria'}, 'signup': {'year': 2023, 'month': 1, 'day': 27, 'hour': 10, 'minute': 41, 'second': 22}}}
+# user = {'jDoe': {'password': 'password', 'first_name': 'Jane', 'last_name': 'Doe', 'age': 20, 'address': {'street': 'abcxyz', 'city': 'Abujs', 'state': 'FCT', 'country': 'Nigeria'}, 'signup': {'year': 2023, 'month': 1, 'day': 27, 'hour': 10, 'minute': 41, 'second': 22}}}
 
 def create_db():
     '''This function create our database'''
@@ -69,4 +69,4 @@ def update():
 def delete():
     pass
 
-create(user=user)
+# create(user=user)
