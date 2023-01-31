@@ -42,6 +42,19 @@ def update_item():
 def delete_item():
     pass
 
+def search(q: str, by='id') ->list:
+    db = read_item()
+    
+    if by == 'name':
+        for i in db:
+            # print(db[i]['name'].lower())
+            if db[i]['name'].lower() == q.lower():
+                print(db[i])
+    else:
+        return db.get(q, 'No such item')
+
 # create_db()
 # print(read_item())
 # print([create_item() for i in range(2)])
+
+# search('cups', by='name')
