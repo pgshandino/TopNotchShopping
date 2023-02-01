@@ -1,7 +1,7 @@
 '''This is a shopping cart for to notch users'''
 
 from auth import login, sign_up
-from database import update
+from database import update, create
 from cart import crud
 
 print('WELCOME TO TOPNOTCHSHOPPING')
@@ -38,7 +38,31 @@ while True:
         print('Account temporarily locked, try again later.')
         break
     elif query == 'signup':
-        sign_up()
+        new = sign_up()
+        create(new)
+        if new:
+            while True:
+                q = input('Add an item or view items[add/view/search/q]: ')
+                if q == 'add':
+                    crud.create_item()
+                elif q == 'view':
+                    print(crud.read_item())
+                elif q == 'search':
+                    search_term = input('Search: ')
+                    by_term = input('filter: ')
+                    if by_term == '':
+                        crud.search(q=search_term)
+                    elif by_term == 'name':
+                        crud.search(q=search_term, by=by_term)
+                    else:
+                        print('Invalid entry for filter. Should be name')
+                elif q == 'q':
+                    print('Logging out...')
+                    break
+                else:
+                    print('Invalid Entry')
+                    print('Only add, view, search and q allowed.')
+                    q = input('Add an item or view items[add/view/search]: ')
     elif query == 'update':
         update()
         print('Update successfull')

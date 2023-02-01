@@ -51,7 +51,8 @@ def search(q: str, by='id') ->list:
             if db[i]['name'].lower() == q.lower():
                 print(db[i])
     else:
-        return db.get(q, 'No such item')
+        print('track this message')
+        print(db.get(q, 'No such item'))
 
 # create_db()
 # print(read_item())
